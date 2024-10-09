@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package transaction;
+
+// Replace this with your own githyb username and repo
+// github.com/username/<repo>/protogen/go/...enum
+// option go_package = 
+// "github.com/timpamungkas/my-grpc-proto/protogen/go/transaction";
+// "github.com/antolin-barrena/my-grpc-proto/protogen/go/transaction";
+// option go_package = "my-protobuf/protogen/go/transaction";
+option go_package = 
+"github.com/antolin-barrena/my-grpc-proto/protogen/go/transaction";
+
+message CartItem {
+  string item_uuid = 1 [json_name = "item_uuid"];
+  uint32 quantity = 2;
+  uint32 item_price = 3 [json_name = "item_price"];
+  bool taxable = 4;
+}
+
+message Cart {
+  string cart_uuid = 1 [json_name = "cart_uuid"];
+  repeated CartItem items = 2;
+}

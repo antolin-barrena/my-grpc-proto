@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package hello;
+
+// Replace this with your own githyb username and repo
+// github.com/username/<repo>/protogen/go/...enum
+// option go_package = "github.com/timpamungkas/my-grpc-proto/protogen/go/hello";
+// option go_package = "github.com/antolin-barrena/my-grpc-proto/protogen/go/hello";
+// option go_package = "my-protobuf/protogen/go/hello";
+option go_package = "github.com/antolin-barrena/my-grpc-proto/protogen/go/hello";
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string greet = 1;
+}
+
+// This is a simple unary grpc.
+service HelloService {
+  rpc SayHello(HelloRequest) returns (HelloResponse) {}
+}
